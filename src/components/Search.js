@@ -1,4 +1,7 @@
 import React from 'react';
+import App from './App.js';
+// import handleInputChange from '.'
+
 
  
 class Search extends React.Component {
@@ -8,14 +11,21 @@ class Search extends React.Component {
     this.state = {
       value: ''
     };
+    // this.props.handleInputChange = this.props.handleInputChange.bind(this);
   }
 
   handleInputChange(e) {
-    this.props.getYouTubeVideos(e.target.value);
     this.setState({
       value: e.target.value
     });
   }
+
+  // handleInputChange(e) {
+  //   this.props.getYouTubeVideos(e.target.value);
+  //   this.setState({
+  //     value: e.target.value
+  //   });
+  // }
 
   render() {
     return (
@@ -23,10 +33,9 @@ class Search extends React.Component {
         <input
           className="form-control"
           type="text"
-          value={this.state.value}
           onChange={this.handleInputChange.bind(this)}
         />
-        <button className="btn hidden-sm-down">
+        <button className="btn hidden-sm-down" onClick={this.props.handleSearchInputChange(this.state.value)}>
           <span className="glyphicon glyphicon-search"></span>
         </button>
       </div>

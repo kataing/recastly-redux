@@ -7,35 +7,38 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      videos: [],
-      currentVideo: null
-    };
-
-    this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
+    // this.state = {
+    //   videos: [],
+    //   currentVideo: null
+    // };
+    // this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
   }
 
-  componentDidMount() {
-    this.getYouTubeVideos('react tutorials');
-  }
+  
 
-  handleVideoListEntryTitleClick(video) {
-    this.setState({currentVideo: video});
-  }
+  // componentDidMount() {
+  //   // this.getYouTubeVideos('react tutorials');
+  //   // this.props.handleSearchInputChange;
+  //   this.props.handleVideoSearch('hello');
+  // }
 
-  getYouTubeVideos(query) {
-    var options = {
-      key: this.props.API_KEY,
-      query: query
-    };
+  // handleVideoListEntryTitleClick(video) {
+  //   this.setState({currentVideo: video});
+  // }
 
-    this.props.searchYouTube(options, (videos) =>
-      this.setState({
-        videos: videos,
-        currentVideo: videos[0]
-      })
-    );
-  }
+  // getYouTubeVideos(query) {
+  //   var options = {
+  //     key: this.props.API_KEY,
+  //     query: query
+  //   };
+
+  //   this.props.searchYouTube(options, (videos) =>
+  //     this.setState({
+  //       videos: videos,
+  //       currentVideo: videos[0]
+  //     })
+  //   );
+  // }
 
   //TODO: swap out the React components below for the container components
   //  you wrote in the 'containers' directory.
